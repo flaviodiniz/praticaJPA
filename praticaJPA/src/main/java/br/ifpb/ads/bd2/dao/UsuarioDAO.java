@@ -59,9 +59,13 @@ public class UsuarioDAO extends DAO {
 			Predicate p = null;
 			if (primeiroNome != null)
 				p = buil.equal(usuarios.get("primeiroNome"), primeiroNome);
-			else if (dataNascimento != null)
-				p = buil.equal(usuarios.get("dataNascimento"), dataNascimento);
-			
+			else {
+				if (dataNascimento != null) {
+					System.out.println(dataNascimento);
+					p = buil.equal(usuarios.get("dataNascimento"), dataNascimento);
+				}
+			}
+
 			query.select(usuarios).where(p);
 			Usuario u = em.createQuery(query).getSingleResult();
 			System.out.println("Usuario recuperado por nome!");

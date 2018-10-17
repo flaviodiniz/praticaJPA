@@ -26,8 +26,8 @@ public class ListandoUsuarios {
 		ArrayList<Usuario> usuarios = (ArrayList<Usuario>) uDao.listaUsuarios();
 		TelefoneDAO tDao = new TelefoneDAO();
 		ArrayList<Telefone> fones = (ArrayList<Telefone>) tDao.listaTelefones();
-//		EmailDAO eDao = new EmailDAO();
-//		ArrayList<Email> emails = (ArrayList<Email>) eDao.listaUsuariosEmail();
+		EmailDAO eDao = new EmailDAO();
+		ArrayList<Email> emails = (ArrayList<Email>) eDao.listaUsuariosEmail();
 
 		for (Usuario u : usuarios) {
 			if (u.getId() == id) {
@@ -36,11 +36,11 @@ public class ListandoUsuarios {
 					if (t.getUsuario().getId() == id)
 						System.out.println("telefone= " + t.getNumero());
 				}
+				/**
+				 * Lista todos os email, quando pega os usuarios e entra na lista, da erro que retorna que interno
+				 */
 //				for (Email e : emails) {
 //					for (Usuario usu : e.getUsuarios()) {
-				/**
-				 * Lista todos os email, porém quando pega os usuarios, retorna que é interno
-				 */
 //						if (usu.getId() == id)
 //							System.out.println("email= " + e.getEmail());
 //					}

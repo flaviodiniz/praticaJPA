@@ -10,7 +10,7 @@ public class ListandoPorNome {
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		UsuarioDAO uDao = new UsuarioDAO();
-		Usuario usuarioRecuperado = uDao.find("Fl·vio", null);
+		Usuario usuarioRecuperado = uDao.find("Fl√°vio", null);
 		System.out.println(usuarioRecuperado.getPrimeiroNome() + " " + usuarioRecuperado.getUltimoNome());
 		
 		Usuario usuarioRecuperado2 = uDao.find(null, new Date(1991, 02, 07));
